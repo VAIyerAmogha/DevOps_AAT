@@ -43,6 +43,8 @@ docker build -t habit-tracker .
 goto end
 
 :docker-run
+docker stop habit-tracker-app >nul 2>&1
+docker rm habit-tracker-app >nul 2>&1
 docker run --name habit-tracker-app -p 8081:8080 -d habit-tracker
 goto end
 
