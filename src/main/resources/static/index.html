@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker</title>
+    <meta name="description" content="A beautiful and simple habit tracker to keep your streaks alive.">
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob1"></div>
+        <div class="blob blob2"></div>
+    </div>
+    <div class="container glass">
+        <header>
+            <h1>My Habits</h1>
+            <p>Stay consistent, build your streaks.</p>
+        </header>
+
+        <main>
+            <section class="add-habit-section">
+                <input type="text" id="habitName" placeholder="What habit do you want to build?">
+                <button onclick="addHabit()" class="btn-primary" id="addBtn">Add Habit</button>
+            </section>
+
+            <section class="habits-list-section" id="habitsList">
+                <!-- Habits will be dynamically injected here -->
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

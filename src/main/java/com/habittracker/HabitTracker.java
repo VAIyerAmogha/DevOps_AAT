@@ -3,7 +3,9 @@ package com.habittracker;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
+import org.springframework.stereotype.Service;
 
+@Service
 public class HabitTracker {
     private Map<String, Habit> habits = new HashMap<>();
     private StreakCalculator calculator = new StreakCalculator();

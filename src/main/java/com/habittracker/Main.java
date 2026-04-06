@@ -1,20 +1,11 @@
 package com.habittracker;
 
-import java.time.LocalDate;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@SpringBootApplication
 public class Main {
     public static void main(String[] args) {
-        HabitTracker tracker = new HabitTracker();
-
-        tracker.addHabit("Gym");
-
-        // simulate past days
-        tracker.getHabits().get("Gym").markCompleted(LocalDate.now().minusDays(2));
-        tracker.getHabits().get("Gym").markCompleted(LocalDate.now().minusDays(1));
-        tracker.getHabits().get("Gym").markCompleted(LocalDate.now());
-
-        int streak = tracker.getStreak("Gym");
-
-        System.out.println("Current streak: " + streak);
+        SpringApplication.run(Main.class, args);
     }
 }
