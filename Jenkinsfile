@@ -1,12 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        // Assume Maven is configured in Jenkins under Global Tool Configuration as 'Maven 3'
-        maven 'Maven 3'
-        jdk 'Java 17'
-    }
-
     stages {
         stage('Checkout') {
             steps {
