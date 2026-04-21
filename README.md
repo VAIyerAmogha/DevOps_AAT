@@ -22,9 +22,44 @@ The pipeline follows standard Continuous Integration and Delivery (CI/CD) practi
 
 ## Available Commands
 
-Whether you use Windows (via `make.bat`) or a Unix-like system (via `Makefile`), the tools accept the same target parameters. 
+Whether you use Windows (via `make.bat`) or a Unix-like system (via `Makefile`), the tools accept the same target parameters.
 
-Run them in your terminal via `./make [command]` or `make [command]` depending on your OS.
+Run commands using:
+- Ubuntu/Linux/macOS: `make [command]`
+- Windows (CMD/PowerShell): `make.bat [command]`
+
+### Ubuntu Prerequisites
+
+Ensure these tools are installed and available on your PATH:
+- Java 17+
+- Maven (`mvn`)
+- Docker
+- GNU Make (`make`)
+
+Example setup on Ubuntu:
+```bash
+sudo apt update
+sudo apt install -y openjdk-17-jdk maven make docker.io
+sudo usermod -aG docker $USER
+```
+
+Then log out and log back in (or restart) so Docker group permissions apply.
+
+## Ubuntu Quick Start
+
+If you want a single guided setup path on Ubuntu:
+
+1. Run setup once:
+```bash
+./setup-ubuntu.sh
+```
+2. Log out and back in.
+3. Run the app:
+```bash
+./run-ubuntu.sh
+```
+
+This script validates Maven and Docker availability, verifies Docker daemon access, then runs `make run`.
 
 ### `clean`
 Runs `mvn clean` to purge the `target/` directory and remove old compile outputs and generated class files.
